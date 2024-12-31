@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_gaussion",
+  "name":"shd_gaussion",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

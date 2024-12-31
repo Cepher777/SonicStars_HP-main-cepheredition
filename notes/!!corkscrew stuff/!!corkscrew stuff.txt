@@ -1,0 +1,47 @@
+to activate corkscrew state:
+var _min_speed = 4 ; //i put  a random value here
+
+Condition:
+(player.ground) and ((player.x >= corkscrew.x - 16) and (player.ground_speed > _min_speed))
+
+or 
+
+((player.x <= (corkscrew.x + corkscrew.width + 16)) and (player.ground_speed < -_min_speed))
+
+while in corkscrew state:
+var _corkscrew_curve_height = 32 ; //i put a random value here
+var _curve_factor = 0.25 ; //i put a random value here
+player.y = _corkscrew_curve_height * ((sin(abs(player.x - corkscrew.x))) * _curve_factor) ;
+
+triggered = false;
+
+if(sign(x_speed) == 1)
+{
+	animation_set_frame(animator, other.player_twist[other.player_twist_frame])
+}
+else
+{
+	animation_set_frame(animator, other.player_twist_alt[12-other.player_twist_frame])
+}
+	y_speed = 0;
+}
+else
+{
+	triggered = false;
+}
+
+if(!triggered)
+{
+	spiral_timer = 0;
+	player_twist_frame = 0;
+}
+
+inst = collision_rectangle(x-50, y-50, x+50, y+50, obj_corkscrew, false, true);
+if inst != noone
+{
+  //change the state
+  with(inst)
+  {
+    //do stuff to corkscrew if need be
+  }
+}
