@@ -22,6 +22,7 @@ function player_state_transform()
 	
 	if(animation_is_playing(animator,ANIM_TRANSFORM)) && (transform_timer >= 6.0){
 
+        transform_timer = 0; // <-
 		super_state = true;
 		direction_allow = true;
 		gravity_allow = true;

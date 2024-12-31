@@ -13,6 +13,7 @@ function player_state_super()
 	if(global.rings <= 0)
 	{
 		super_state = false;
+        exiting = true;
 		global.rings = 0;
 		play_music(J_SUPER, Jingle);
 		player_animation_list();

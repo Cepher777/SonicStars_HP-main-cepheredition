@@ -83,6 +83,8 @@
 	invincible = false;					//Check used to check if player has invincibility or not
 	transform_timer = 0;				//Timer for Super State
 	super_state = false;				//Check for Super State
+    super_color_value = Wave(5,10,0.9,0); // Store the color value of Super Sonic
+    exiting = false;                      // variable for confirming the exit of Super State
 	
 	//Character specifics:
 	dropdash_timer = 0;					//Sonic's Dropdash charge delay timer

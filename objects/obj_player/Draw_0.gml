@@ -1,11 +1,27 @@
 /// @description Draw the player
 	if(state = ST_KNOCKOUT || invincible_timer mod 12 >= 6 || invincible_timer = 0 || invincible)
 	{
-
+        
+		show_debug_message(string(transform_timer))
 		if (transform_timer != 0) {
 			palette_swap(spr_pal_characters, (transform_timer mod 7));
 		}
-
+    
+		if(super_state) && (transform_timer == 0)
+		{
+		 super_color_value = Wave(5,10,0.9,0);
+		palette_swap(spr_pal_characters,super_color_value);
+			
+		}
+		else if (!super_state) && (exiting == true)
+		{
+			if(super_color_value != 0) super_color_value -= 0.5;
+			palette_swap(spr_pal_characters,super_color_value);
+			if(super_color_value <= 0) exiting = false;
+		}
+		
+		
+		
 		if(speed_shoes)
 		{
 			for (var i = 0; i < 3; ++i) 
